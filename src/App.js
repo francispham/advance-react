@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Toggle from './ToggleRPC';
+import Portal from './Portal';
 
 function App() {
   return (
@@ -26,6 +27,9 @@ function App() {
           <> {/* This syntax replaces React <Fragment>: cleaner code that not showing <div> tag.*/}
             {on && <h1>Show Me</h1>}   {/* Similar Syntax: <Component on={on} /> */}
             <button onClick={toggle}>Show/Hide</button>
+            <Portal>
+              {on && <h1>Hi, I am in A Portal</h1>}
+            </Portal>
           </>
         )}
       </Toggle>
