@@ -21,7 +21,9 @@ function App() {
           Learn React
         </a>
       </header>
-      <Toggle />
+      <Toggle>
+        <h1>Hello</h1>
+      </Toggle>
     </div>
   );
 }
