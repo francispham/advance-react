@@ -23,10 +23,10 @@ function App() {
       </header>
       <Toggle>
         {({ on, toggle }) => (
-          <div>
+          <> {/* This syntax replaces React <Fragment>: cleaner code that not showing <div> tag.*/}
             {on && <h1>Show Me</h1>}   {/* Similar Syntax: <Component on={on} /> */}
             <button onClick={toggle}>Show/Hide</button>
-          </div>
+          </>
         )}
       </Toggle>
     </div>
