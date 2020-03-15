@@ -3,7 +3,10 @@ import styled from "styled-components";
 import logo from './logo.svg';
 import './App.css';
 
-import { Toggle, Portal, Modal } from './Utilities';
+// Absolute Imports:
+import { Toggle, Portal } from 'Utilities';
+import { Modal } from "Elements";
+
 
 function App() {
   return (

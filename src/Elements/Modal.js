@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-import Portal from './Portal';
+//Absolute Imports: (For Things Won't Change!) 
+import { Portal } from 'Utilities';
+// import { Card, Icon } from "Elements"; has to be:
 import Icon from './Icon';
+import { Card } from './Cards';
 
 export default class Modal extends Component {
     render() {
@@ -36,13 +39,9 @@ const ModalWrapper = styled.div`
     align-items: center;
 `;
 
-const ModalCard = styled.div`
+const ModalCard = styled(Card)`
     position: relative;
-    background: white;
-    border-radius: 15px;
-    padding: 15px;
     min-width: 520px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
     z-index: 10;
     opacity: 0.95;
     margin-bottom: 7rem;
