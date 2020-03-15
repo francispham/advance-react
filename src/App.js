@@ -1,19 +1,21 @@
-import React, { Component, createContext } from 'react';
+import React, { Component } from 'react';
 import styled from "styled-components";
 import logo from './logo.svg';
 import './App.css';
+
+import { UserContext } from './UserContext';
+import User from './User';
 
 // Absolute Imports:
 import { Toggle, Portal } from 'Utilities';
 import { Modal } from 'Elements';
 
-const UserContext = createContext();
 
 class UserProvider extends Component {
   state = {
     id: '1',
     name: 'Francis',
-    email: 'francispham@gmail.com'
+    email: 'francis.pham.ca@gmail.com'
   }
   render() {
     return (
@@ -46,7 +48,7 @@ function App() {
             Learn React
           </a>
         </header>
-        <br />
+        <User />
         <Toggle>
           {({ on, toggle }) => (
             <>
