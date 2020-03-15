@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import styled from "styled-components";
 import logo from './logo.svg';
 import './App.css';
 
@@ -8,7 +7,7 @@ import User from './User';
 
 // Absolute Imports:
 import { Toggle, Portal } from 'Utilities';
-import { Modal } from 'Elements';
+import { Modal, Button } from 'Elements';
 
 
 class UserProvider extends Component {
@@ -17,11 +16,21 @@ class UserProvider extends Component {
     name: 'Francis',
     email: 'francis.pham.ca@gmail.com'
   }
+
+  logout = () => {
+    this.setState({
+      id: null,
+      name: '',
+      email: ''
+    })
+  }
+
   render() {
     return (
       <UserContext.Provider
         value={{
-          user: this.state
+          user: this.state,
+          logout: this.logout
         }}
       >
         {this.props.children}
@@ -49,6 +58,7 @@ function App() {
           </a>
         </header>
         <User />
+        <br />
         <Toggle>
           {({ on, toggle }) => (
             <>
@@ -79,20 +89,3 @@ function App() {
 }
 
 export default App;
-
-const Button = styled.button`
-  display: inline-block;
-  text-transform: uppercase;
-  background: #f8f5f1;
-  padding: 10px 40px;
-  color: #333;
-  border-radius: 4px;
-  font-size: 1rem;
-  font-weight: 400;
-  box-shadow: 0 2px 10px rgba(50, 50, 73, 0.2),
-    0 37.5px 75px -5px rgba(0, 0, 0, 0.1);
-
-  &:hover {
-    background: #fbc89d;
-  }
-`;
