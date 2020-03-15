@@ -2,9 +2,11 @@
 import React, { Component } from 'react';
 import styled from "styled-components";
 
+import { colors } from 'Utilities';
+
 export default class Icon extends Component {
     static defaultProps = {
-        color: '#fbc89d'
+        color: `${colors.custom1}`
     }
 
     render() {
@@ -15,7 +17,6 @@ export default class Icon extends Component {
                         x="0px"
                         y="0px"
                         viewBox="0 0 31.11 31.11"
-                        enableBackground="new 0 0 31.11 31.11"
                     >
                         <Polygon
                             fill={this.props.color}
@@ -30,11 +31,12 @@ export default class Icon extends Component {
 const SVG = styled.svg`
     width: 24px;
     height: 24px;
+    enable-background: new 0 0 31.11 31.11;
 `;
 
 const Polygon = styled.polygon`
     ${SVG}:hover & {
-        fill: #f8f5f1;
+        fill: ${colors.custom};
     }
 `;
 

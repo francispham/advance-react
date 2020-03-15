@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 
 //Absolute Imports: (For Things Won't Change!) 
-import { Portal } from 'Utilities';
+import { Portal, absolute } from 'Utilities';
 // import { Card, Icon } from "Elements"; has to be:
 import Icon from './Icon';
 import { Card } from './Cards';
@@ -29,9 +29,7 @@ export default class Modal extends Component {
 };
 
 const ModalWrapper = styled.div`
-    position: absolute;
-    top: 0;
-    left:0;
+    ${absolute({})};
     width: 100%;
     height:100%;
     display: flex;
@@ -48,19 +46,18 @@ const ModalCard = styled(Card)`
 `;
 
 const CloseButton = styled.button`
-    position: absolute;
-    top: 0;
-    right: 0;
+    ${absolute({
+        y: 'top',
+        x: 'right'
+    })};
     background: transparent;
     padding: 10px;
 `;
 
 const Background = styled.div`
-    position: absolute;
+    ${absolute({})};
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
     background: black;
     opacity: 0.5;
 `;
