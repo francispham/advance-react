@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
@@ -42,18 +42,20 @@ function App() {
         </Toggle>
         <br />
         <br />
-        <Toggle>
-          {({ on, toggle }) => (
-            <>
-              {" "}
-              {/* This syntax replaces React <Fragment>: cleaner code that not showing <div> tag.*/}
-              {on && <h1>Show Me</h1>}{" "}
-              {/* Similar Syntax: <Component on={on} /> */}
-              <Button onClick={toggle}>Show/Hide</Button>
-              <Portal>{on && <h1>Hi, I am in A Portal</h1>}</Portal>
-            </>
-          )}
-        </Toggle>
+        <section>
+          <Toggle>
+            {({ on, toggle }) => (
+              <>
+                {" "}
+                {/* This syntax replaces React <Fragment>: cleaner code that not showing <div> tag.*/}
+                {on && <h1>Show Me</h1>}{" "}
+                {/* Similar Syntax: <Component on={on} /> */}
+                <Button onClick={toggle}>Show/Hide</Button>
+                <Portal>{on && <h1>Hi, I am in A Portal</h1>}</Portal>
+              </>
+            )}
+          </Toggle>
+        </section>
       </div>
     </UserProvider>
   );
