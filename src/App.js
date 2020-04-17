@@ -1,66 +1,59 @@
 import React from 'react';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
 import './App.css';
 
-import Menu from "./Menu";
+import Menu from "./Components/Menu";
+import UserComponent from './Components/User';
+import CoolCards from './Components/CoolCards';
 
-import UserComponent from './User/';
-
-// Absolute Imports:
+// Absolute Imports: (Does not Need Directory)
 import { Toggle, Portal, } from 'Utilities';
-import { 
-  Button, Header, Container, Card, CardGrid } from 'Elements';
-import { blue, purp, black, green, } from 'Backgrounds';
+import { Button, Header } from 'Elements';
 
 function App() {
   return (
-    <div className="App">
-      <Header>
-        <Menu />
-        <h1>Header</h1>
-      </Header>
-      <section>
-        <h2>Choose Your Option</h2>
-        <Button>User Info</Button> <Button>Cool Cards</Button>
-      </section>
-      <UserComponent />
-      <br />
-      <br />
-      <section>
-        <Toggle>
-          {({ on, toggle }) => (
-            <>
-              {" "}
-              {/* This syntax replaces React <Fragment>: cleaner code that not showing <div> tag.*/}
-              {on && <h1>Show Me</h1>}{" "}
-              {/* Similar Syntax: <Component on={on} /> */}
-              <Button onClick={toggle}>Show/Hide</Button>
-              <Portal>{on && <h1>Hi, I am in A Portal</h1>}</Portal>
-            </>
-          )}
-        </Toggle>
-      </section>{" "}
-      <Container>
-        <h2>Super Cool</h2>
-        <CardGrid>
-          <Card style={{ background: "var(--purp)" }}>
-            <h3>Some card</h3>
-            <img alt={purp} src={purp} />
-          </Card>
-          <Card style={{ background: "var(--blue)" }}>
-            <h3>Some card</h3>
-            <img alt={blue} src={blue} />
-          </Card>
-          <Card style={{ background: "var(--black)" }}>
-            <h3>Some card</h3>
-            <img alt={black} src={black} />
-          </Card>
-          <Card style={{ background: "var(--green)" }}>
-            <h3>Some card</h3>
-            <img alt={green} src={green} />
-          </Card>
-        </CardGrid>
-      </Container>
-    </div>
+    <Router>
+      <div className="App">
+        <Header>
+          <Menu />
+          <h1>Header</h1>
+        </Header>
+        <section>
+          <h2>Choose Your Option</h2>
+          <Link to="/user">
+            <Button>User Account</Button>
+          </Link>{" "}
+          <Link to="/coolCards">
+            <Button>CoolCards</Button>
+          </Link>{" "}
+        </section>
+
+        <Switch>
+          <Route exact path="/" />
+          <Route exact path="/coolCards" component={CoolCards} />
+          <Route exact path="/user" component={UserComponent} />
+        </Switch>
+
+        <footer>
+          <Toggle>
+            {({ on, toggle }) => (
+              <>
+                {" "}
+                {/* This syntax replaces React <Fragment>: cleaner code that not showing <div> tag.*/}
+                {on && <Link to="/"><h1>Back Home</h1></Link>}
+                <br />
+                {/* Similar Syntax: <Component on={on} /> */}
+                <Button style={{ margin: "1rem" }} onClick={toggle}>
+                  Show/Hide
+                </Button>
+                <Portal>{on && <h1>Hi, I am in A Portal</h1>}</Portal>
+              </>
+            )}
+          </Toggle>
+        </footer>
+      </div>
+    </Router>
   );
 }
 

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
-import { Button } from '../Elements';
+// Absolute Imports: (Does not Need Directory)
+import { Button } from 'Elements';
 
 import { UserContext } from './UserContext';
 

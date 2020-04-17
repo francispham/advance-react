@@ -3,8 +3,9 @@ import React from "react";
 import User from "./User";
 import UserProvider from "./UserProvider";
 
+// Absolute Imports: (Does not Need Directory)
 import { Toggle, } from "Utilities";
-import { Modal, Button, } from "Elements";
+import { Modal, Button } from "Elements";
 
 function UserComponent() {
     return (
