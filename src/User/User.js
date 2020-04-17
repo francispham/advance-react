@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import { Button } from 'Elements';
+import { Button } from '../Elements';
 
 import { UserContext } from './UserContext';
 

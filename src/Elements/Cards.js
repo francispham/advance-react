@@ -1,11 +1,23 @@
 import styled from 'styled-components';
-import { elevation, transition, teal } from 'Utilities';
+import { elevation, transition, custom } from "Utilities";
+
+export const CardGrid = styled.div`
+    display: grid;
+    grid-gap: 20px;
+`;
 
 export const Card = styled.div`
     background: white;
     border-radius: 5px;
-    padding: 15px;
-    color: ${teal}; 
+    padding: 20px;
+    h3 {
+        margin-top: 0;
+        font-size: 2rem;
+    }
+    img {
+        width: 100%;
+    }
+    color: ${custom}; 
     ${elevation[4]};
     ${transition({
         ease: 'ease-in',
