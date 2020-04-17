@@ -1,15 +1,17 @@
-import React, { useState } from 'react'
+import React from 'react'
+
+import { useInc } from '../hooks/useInc';
 
 import { Button } from 'Elements';
 
 const Inc = () => {
-  const [ value, setValue ] = useState(0);
+  const [ value, { inc, dec } ] = useInc();
 
   return (
     <div>
-      <Button onClick={() => setValue(prevSate => prevSate - 1)}>-</Button>
+      <Button onClick={dec}>-</Button>
       {' '}{value}{' '}
-      <Button onClick={() => setValue(prevSate => prevSate + 1)}>+</Button>
+      <Button onClick={inc}>+</Button>
     </div>
   )
 }
