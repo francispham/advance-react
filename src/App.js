@@ -3,9 +3,10 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
 
-import Menu from "./Components/Menu";
-import UserComponent from './Components/User';
-import CoolCards from './Components/CoolCards';
+import Inc from './components/Inc';
+import Menu from './components/Menu';
+import UserComponent from './components/User';
+import CoolCards from './components/CoolCards';
 
 // Absolute Imports: (Does not Need Directory)
 import { Toggle, Portal, } from 'Utilities';
@@ -26,9 +27,11 @@ function App() {
           </Link>{" "}
           <Link to="/coolCards">
             <Button>CoolCards</Button>
-          </Link>{" "}
+          </Link>
+        </section><br />
+        <section>
+          <Inc />
         </section>
-
         <Switch>
           <Route exact path="/" />
           <Route exact path="/coolCards" component={CoolCards} />
