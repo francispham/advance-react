@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { elevation, transition, custom } from "Utilities";
+import { elevation, transition, custom, purp } from "Utilities";
 
 export const CardGrid = styled.div`
     display: grid;
@@ -7,7 +7,7 @@ export const CardGrid = styled.div`
 `;
 
 export const Card = styled.div`
-    background: white;
+    background: ${purp};
     border-radius: 5px;
     padding: 20px;
     h3 {

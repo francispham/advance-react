@@ -22,10 +22,10 @@ function App() {
           <h1>Header</h1>
         </Header>
         <section>
-          <h2>Choose Your Option</h2>
+          <h2>React Advance</h2>
           <Link to="/user">
             <Button>User Account</Button>
-          </Link>{" "}
+          </Link>
           <Link to="/coolCards">
             <Button>CoolCards</Button>
           </Link>
@@ -47,7 +47,6 @@ function App() {
           <Toggle>
             {({ isToggled, toggle }) => (
               <>
-                {" "}
                 {isToggled && <Link to="/"><h1>Back Home</h1></Link>}
                 <br />
                 <Button style={{ margin: "1rem" }} onClick={toggle}>

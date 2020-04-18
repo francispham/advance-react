@@ -11,7 +11,6 @@ function UserComponent() {
     return (
         <UserProvider>
             <User />
-            <br />
             <Toggle>
                 {({ isToggled, toggle }) => (
                 <>

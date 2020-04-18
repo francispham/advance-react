@@ -15,8 +15,8 @@ const Inc = () => {
     <div>
       <h3>Volume</h3>
       <Button onClick={dec}>-</Button>
-      {' '}{volume}{' '}
-      <Button onClick={inc}>+</Button>{' '}
+      {volume}
+      <Button onClick={inc}>+</Button>
       <Button onClick={reset}>Reset Volume</Button>
     </div>
   );
