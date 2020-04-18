@@ -1,4 +1,6 @@
 
+import Hover from './Hover';
+import Mount from './Mount';
 import Portal from './Portal';
 import Toggle from './Toggle';
 import elevation from './elevation';
@@ -8,4 +10,4 @@ import colors from './colors';
 export * from './colors';
 export * from './position';
 
-export { Portal, Toggle, elevation, transition, colors };
+export { Hover, Mount, Portal, Toggle, elevation, transition, colors };
