@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
 
+import Mount from './components/Utilities/Mount';
 import Inc from './components/Inc';
 import Menu from './components/Menu';
 import UserComponent from './components/User';
@@ -32,6 +33,9 @@ function App() {
         <section>
           <Inc />
         </section>
+        <section>
+          <Mount />
+        </section>
 
         <Switch>
           <Route exact path="/" />
@@ -57,6 +61,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;
