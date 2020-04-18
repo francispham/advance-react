@@ -3,13 +3,14 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
 
+import Hover from './components/Hover';
 import Inc from './components/Inc';
 import Menu from './components/Menu';
 import UserComponent from './components/User';
 import CoolCards from './components/CoolCards';
 
 // Absolute Imports: (Does not Need Directory)
-import { Toggle, Portal, Mount, Hover } from 'Utilities';
+import { Toggle, Portal, Mount } from 'Utilities';
 import { Button, Header } from 'Elements';
 
 function App() {
