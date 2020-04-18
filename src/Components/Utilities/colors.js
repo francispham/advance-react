@@ -8,11 +8,11 @@ export const custom1 = "#fbc89d";
 
 // This is exported at index.js line 11:
 export default {
-    lightGrey,
-    grey,
-    black,
-    teal,
-    purp,
-    custom,
-    custom1
+  lightGrey,
+  grey,
+  black,
+  teal,
+  purp,
+  custom,
+  custom1
 };
