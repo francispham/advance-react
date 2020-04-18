@@ -13,10 +13,10 @@ function UserComponent() {
             <User />
             <br />
             <Toggle>
-                {({ on, toggle }) => (
+                {({ isToggled, toggle }) => (
                 <>
                     <Button onClick={toggle}>Login</Button>
-                    <Modal on={on} toggle={toggle}>
+                    <Modal isToggled={isToggled} toggle={toggle}>
                     <h1>In Modal</h1>
                     </Modal>
                 </>

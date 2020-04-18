@@ -32,6 +32,7 @@ function App() {
         <section>
           <Inc />
         </section>
+
         <Switch>
           <Route exact path="/" />
           <Route exact path="/coolCards" component={CoolCards} />
@@ -40,17 +41,15 @@ function App() {
 
         <footer>
           <Toggle>
-            {({ on, toggle }) => (
+            {({ isToggled, toggle }) => (
               <>
                 {" "}
-                {/* This syntax replaces React <Fragment>: cleaner code that not showing <div> tag.*/}
-                {on && <Link to="/"><h1>Back Home</h1></Link>}
+                {isToggled && <Link to="/"><h1>Back Home</h1></Link>}
                 <br />
-                {/* Similar Syntax: <Component on={on} /> */}
                 <Button style={{ margin: "1rem" }} onClick={toggle}>
                   Show/Hide
                 </Button>
-                <Portal>{on && <h1>Hi, I am in A Portal</h1>}</Portal>
+                <Portal>{isToggled && <h1>Hi, I am in A Portal</h1>}</Portal>
               </>
             )}
           </Toggle>
