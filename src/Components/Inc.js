@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { useInc } from '../hooks/useInc';
+import { useInc } from '../hooks';
 
 import { Button } from 'Elements';
 
