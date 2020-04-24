@@ -1,11 +1,11 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import styled from 'styled-components';
+import { useAppState } from '../state';
 
-import { AppContext } from './PageWrapper';
 import { Button } from 'Elements';
 
 const Nav = () => {
-  const { isMenuOpen, toggleMenu } = useContext(AppContext);
+  const { isMenuOpen, toggleMenu } = useAppState();
 
   if(!isMenuOpen) return null;
   return (

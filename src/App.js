@@ -3,8 +3,9 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
 
+import { PageWrapper } from './state';
+
 import Nav from './components/Nav';
-import PageWrapper from './components/PageWrapper';
 import Hover from './components/Hover';
 import Inc from './components/Inc';
 import Menu from './components/Menu';

@@ -1,9 +1,8 @@
-import React, { useContext } from "react";
-
-import { AppContext } from "./PageWrapper";
+import React from "react";
+import { useAppState } from "../state";
 
 const Menu = () => {
-  const { toggleMenu } = useContext(AppContext);
+  const { toggleMenu } = useAppState();
 
   return (
     <button
