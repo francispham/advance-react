@@ -5,6 +5,7 @@ import './App.css';
 
 import { PageWrapper } from './state';
 
+import Cookie from './components/Cookie';
 import Nav from './components/Nav';
 import Hover from './components/Hover';
 import Inc from './components/Inc';
@@ -25,7 +26,7 @@ function App() {
             <Menu />
             <h1>Header</h1>
           </Header>
-          
+
           <Nav />
 
           <main>
@@ -44,6 +45,9 @@ function App() {
               </Switch>
             </section>
             <section>
+              <Cookie />
+            </section>
+            <section>
               <Inc />
             </section>
             <section>
@@ -52,18 +56,18 @@ function App() {
             <section>
               <Hover />
             </section>
-
-
           </main>
 
           <footer>
             <Toggle>
               {({ isToggled, toggle }) => (
                 <>
-                  {isToggled && <Link to="/"><h1>Back Home</h1></Link>}
-                  <Button onClick={toggle}>
-                    Show/Hide
-                  </Button>
+                  {isToggled && (
+                    <Link to="/">
+                      <h1>Back Home</h1>
+                    </Link>
+                  )}
+                  <Button onClick={toggle}>Show/Hide</Button>
                   <Portal>{isToggled && <h1>Hi, I am in A Portal</h1>}</Portal>
                 </>
               )}
