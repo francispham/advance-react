@@ -9,7 +9,7 @@ import Nav from './components/Nav';
 import Hover from './components/Hover';
 import Inc from './components/Inc';
 import Menu from './components/Menu';
-import UserComponent from './components/User';
+import User from './components/User';
 import CoolCards from './components/CoolCards';
 
 // Absolute Imports: (Does not Need Directory)
@@ -29,14 +29,19 @@ function App() {
           <Nav />
 
           <main>
+            <h1>React Advance</h1>
             <section>
-              <h2>React Advance</h2>
               <Link to="/user">
                 <Button>User Account</Button>
               </Link>
               <Link to="/coolCards">
                 <Button>CoolCards</Button>
               </Link>
+              <Switch>
+                <Route exact path="/" />
+                <Route exact path="/coolCards" component={CoolCards} />
+                <Route exact path="/user" component={User} />
+              </Switch>
             </section>
             <section>
               <Inc />
@@ -48,11 +53,7 @@ function App() {
               <Hover />
             </section>
 
-            <Switch>
-              <Route exact path="/" />
-              <Route exact path="/coolCards" component={CoolCards} />
-              <Route exact path="/user" component={UserComponent} />
-            </Switch>
+
           </main>
 
           <footer>

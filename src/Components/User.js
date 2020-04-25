@@ -1,7 +1,6 @@
 import React from "react";
 
-import User from "./User";
-import UserProvider from "./UserProvider";
+import { UserProvider, useUserState } from "../state";
 
 // Absolute Imports: (Does not Need Directory)
 import { Toggle, } from "Utilities";
@@ -22,6 +21,19 @@ function UserComponent() {
         )}
       </Toggle>
     </UserProvider>
+  )
+};
+
+const User = () => {
+  const { user, logout } = useUserState();
+
+  return (
+    <div>
+      <h1>User Info</h1>
+      <h3>{user.name}</h3>
+      <h4>{user.email}</h4>
+      <Button onClick={logout}>Logout</Button>
+    </div>
   )
 };
 
