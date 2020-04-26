@@ -20,7 +20,15 @@ export const UserProvider = ({ children }) => {
             name: '',
             email: '',
           })
-        }
+        },
+        login: () => {
+          setState({
+            ...state,
+            id: 1,
+            name: 'Francis',
+            email: 'francis.pham.ca@gmail.com',
+          })
+        },
       }}
     >
       {children}
