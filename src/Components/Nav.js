@@ -1,11 +1,18 @@
 import React from 'react';
 import styled from 'styled-components';
 import { useAppState } from '../state';
+import { useScrollFreeze } from '../hooks';
 
 import { Button } from 'Elements';
 
+const NavWrapper = () => {
+  const { isMenuOpen } = useAppState();
+  if (!isMenuOpen) return null;
+  return <Nav />
+}
 const Nav = () => {
   const { isMenuOpen, toggleMenu } = useAppState();
+  useScrollFreeze();
 
   if(!isMenuOpen) return null;
   return (
@@ -16,7 +23,7 @@ const Nav = () => {
   );
 };
 
-export default Nav;
+export default NavWrapper;
 
 const Navigation = styled.nav`
   background: var(--black);
