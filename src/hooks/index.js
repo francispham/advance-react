@@ -1,3 +1,4 @@
+export * from './useMeasure';
 export * from './useWindowWidth';
 export * from './useScrollFreeze';
 export * from './useCookies';

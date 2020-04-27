@@ -10,5 +10,5 @@ export const useScrollFreeze = () => {
       // cleanup
       document.body.style.overflow = original;
     };
-  }, [])
+  }, [original])
 };
