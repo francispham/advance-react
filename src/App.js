@@ -5,6 +5,7 @@ import './App.css';
 
 import { PageWrapper } from './state';
 
+import Theme from './components/Theme';
 import Local from './components/Local';
 import Script from './components/Script';
 import Cookie from './components/Cookie';
@@ -17,7 +18,7 @@ import CoolCards from './components/CoolCards';
 
 // Absolute Imports: (Does not Need Directory)
 import { Toggle, Portal, Mount } from 'Utilities';
-import { Button, Header } from 'Elements';
+import { Button, Header, Container } from 'Elements';
 
 function App() {
   return (
@@ -31,7 +32,7 @@ function App() {
 
           <Nav />
 
-          <main>
+          <Container>
             <h1>React Advance</h1>
             <section>
               <Link to="/user">
@@ -45,6 +46,9 @@ function App() {
                 <Route exact path="/coolCards" component={CoolCards} />
                 <Route exact path="/user" component={User} />
               </Switch>
+            </section>
+            <section>
+              <Theme />
             </section>
             <section>
               <Local />
@@ -64,7 +68,7 @@ function App() {
             <section>
               <Hover />
             </section>
-          </main>
+          </Container>
 
           <footer>
             <Toggle>

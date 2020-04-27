@@ -1,3 +1,4 @@
+export * from './useTheme';
 export * from './useLocalStorage';
 export * from './useScript';
 export * from './useMeasure';
