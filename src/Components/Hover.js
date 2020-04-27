@@ -3,10 +3,13 @@ import React from 'react';
 import { Card } from 'Elements';
 import { green } from "Backgrounds";
 
-import { useHover } from '../hooks';
+import { useHover, useWindowWidth } from '../hooks';
 
 const Hover = () => {
   const [ isHovered, bind ] = useHover();
+  const width = useWindowWidth();
+  console.log('Width: ', width);
+  if (width < 500) return null;
 
   return (
     <div>
