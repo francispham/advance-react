@@ -5,6 +5,7 @@ import './App.css';
 
 import { PageWrapper } from './state';
 
+import Script from './components/Script';
 import Cookie from './components/Cookie';
 import Nav from './components/Nav';
 import Hover from './components/Hover';
@@ -43,6 +44,9 @@ function App() {
                 <Route exact path="/coolCards" component={CoolCards} />
                 <Route exact path="/user" component={User} />
               </Switch>
+            </section>
+            <section>
+              <Script />
             </section>
             <section>
               <Cookie />
