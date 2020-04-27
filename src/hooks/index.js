@@ -1,3 +1,4 @@
+export * from './useLocalStorage';
 export * from './useScript';
 export * from './useMeasure';
 export * from './useWindowWidth';
