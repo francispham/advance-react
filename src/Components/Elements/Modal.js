@@ -10,7 +10,7 @@ import { Card } from './Cards';
 
 export default class Modal extends Component {
   render() {
-    const {children, toggle, isToggled } = this.props;
+    const { children, toggle, isToggled } = this.props;
     return (
       <Portal>
         {isToggled &&

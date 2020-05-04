@@ -1,8 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+import { animated } from "react-spring"; 
 
 import './App.css';
 
+import { useToggle } from './hooks';
 import { PageWrapper } from './state';
 
 import Theme from './components/Theme';
@@ -21,6 +23,8 @@ import { Toggle, Portal, Mount } from 'Utilities';
 import { Button, Header, Container } from 'Elements';
 
 function App() {
+  const { toggle, reactSpring } = useToggle();
+
   return (
     <PageWrapper>
       <Router>
@@ -33,7 +37,10 @@ function App() {
           <Nav />
 
           <Container>
-            <h1>React Advance</h1>
+            <header>
+              <animated.h1 style={reactSpring}>React Advance</animated.h1>
+              <Button onClick={toggle}>React Spring</Button>
+            </header>
             <section>
               <Link to="/user">
                 <Button>User Account</Button>
