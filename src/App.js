@@ -1,64 +1,94 @@
 import React from 'react';
-import logo from './logo.svg';
+import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
+
 import './App.css';
 
-import UserProvider from './UserProvider';
+import { PageWrapper } from './state';
 
-import User from './User';
+import Theme from './components/Theme';
+import Local from './components/Local';
+import Script from './components/Script';
+import Cookie from './components/Cookie';
+import Nav from './components/Nav';
+import Hover from './components/Hover';
+import Inc from './components/Inc';
+import Menu from './components/Menu';
+import User from './components/User';
+import CoolCards from './components/CoolCards';
 
-// Absolute Imports:
-import { Toggle, Portal } from 'Utilities';
-import { Modal, Button } from 'Elements';
+// Absolute Imports: (Does not Need Directory)
+import { Toggle, Portal, Mount } from 'Utilities';
+import { Button, Header, Container } from 'Elements';
 
 function App() {
   return (
-    <UserProvider>
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-        <User />
-        <br />
-        <Toggle>
-          {({ on, toggle }) => (
-            <>
-              <Button onClick={toggle}>Login</Button>
-              <Modal on={on} toggle={toggle}>
-                <h1>In Modal</h1>
-              </Modal>
-            </>
-          )}
-        </Toggle>
-        <br />
-        <br />
-        <section>
-          <Toggle>
-            {({ on, toggle }) => (
-              <>
-                {" "}
-                {/* This syntax replaces React <Fragment>: cleaner code that not showing <div> tag.*/}
-                {on && <h1>Show Me</h1>}{" "}
-                {/* Similar Syntax: <Component on={on} /> */}
-                <Button onClick={toggle}>Show/Hide</Button>
-                <Portal>{on && <h1>Hi, I am in A Portal</h1>}</Portal>
-              </>
-            )}
-          </Toggle>
-        </section>
-      </div>
-    </UserProvider>
+    <PageWrapper>
+      <Router>
+        <div className="App">
+          <Header>
+            <Menu />
+            <h1>Header</h1>
+          </Header>
+
+          <Nav />
+
+          <Container>
+            <h1>React Advance</h1>
+            <section>
+              <Link to="/user">
+                <Button>User Account</Button>
+              </Link>
+              <Link to="/coolCards">
+                <Button>CoolCards</Button>
+              </Link>
+              <Switch>
+                <Route exact path="/" />
+                <Route exact path="/coolCards" component={CoolCards} />
+                <Route exact path="/user" component={User} />
+              </Switch>
+            </section>
+            <section>
+              <Theme />
+            </section>
+            <section>
+              <Local />
+            </section>
+            <section>
+              <Script />
+            </section>
+            <section>
+              <Cookie />
+            </section>
+            <section>
+              <Inc />
+            </section>
+            <section>
+              <Mount />
+            </section>
+            <section>
+              <Hover />
+            </section>
+          </Container>
+
+          <footer>
+            <Toggle>
+              {({ isToggled, toggle }) => (
+                <>
+                  {isToggled && (
+                    <Link to="/">
+                      <h1>Back Home</h1>
+                    </Link>
+                  )}
+                  <Button onClick={toggle}>Show/Hide</Button>
+                  <Portal>{isToggled && <h1>Hi, I am in A Portal</h1>}</Portal>
+                </>
+              )}
+            </Toggle>
+          </footer>
+        </div>
+      </Router>
+    </PageWrapper>
   );
-}
+};
 
 export default App;

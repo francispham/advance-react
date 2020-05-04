@@ -1,3 +1,13 @@
+:root {
+  --red: #fa444c;
+  --purp: #9e8fc7;
+  --blue: #4f8cdd;
+  --black: #3b2c41;
+  --green: #a3ffc1;
+  --bg: #fff;
+  --text: #333;
+}
+
 .App {
   text-align: center;
 }
@@ -11,21 +21,6 @@
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
 
 @keyframes App-logo-spin {
