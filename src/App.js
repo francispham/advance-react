@@ -27,12 +27,9 @@ function App() {
       <Router>
         <div className="App">
           <Header>
+            <Nav />
             <Menu />
-            <h1>Header</h1>
           </Header>
-
-          <Nav />
-
           <Container>
             <SpringHeader />
             <section>

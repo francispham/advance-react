@@ -5,13 +5,11 @@ export const Header = styled.header`
   color: white;
   padding: 20px;
   display: flex;
+  justify-content: flex-end;
   > svg {
     margin-right: 20px;
   }
   > * {
     margin: 0;
-  }
-  h1 {
-    font-size: 1rem;
   }
 `;

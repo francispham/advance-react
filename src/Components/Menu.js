@@ -1,14 +1,16 @@
 import React from "react";
+import styled from "styled-components";
+
 import { useAppState } from "../state";
 
 const Menu = () => {
   const { toggleMenu } = useAppState();
 
   return (
-    <button
-      style={{ background: 'none' }}
+    <MenuButton
       onClick={toggleMenu}
     >
+      Header
       <svg viewBox="0 0 18 15" width="20">
         <path
           fill="#fff"
@@ -23,8 +25,18 @@ const Menu = () => {
           d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"
         />
       </svg>
-    </button>
+    </MenuButton>
   )
 };
 
 export default Menu;
+
+const MenuButton = styled.button`
+  appearance: none;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  z-index: 15;
+`;

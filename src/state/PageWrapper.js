@@ -6,13 +6,14 @@ export const AppContext = createContext({
 });
 
 export const PageWrapper = ({ children }) => {
-  const { isToggled, toggle } = useToggle(false);
+  const { isToggled, toggle, x } = useToggle(false);
 
   return (
     <AppContext.Provider
       value={{
         isMenuOpen: isToggled,
         toggleMenu: toggle,
+        x: x,
       }}
     >
       {children}

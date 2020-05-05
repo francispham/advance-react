@@ -1,11 +1,23 @@
 :root {
-  --red: #fa444c;
   --purp: #9e8fc7;
+  --darkPurp: #373142;
+  --xtraPurp: #191324;
   --blue: #4f8cdd;
-  --black: #3b2c41;
   --green: #a3ffc1;
   --bg: #fff;
   --text: #333;
+  --grey: #d8d8d8;
+  --teal: #82d8d8;
+  --red: #e54b4b;
+  --black: #3b2c41;
+  --moreBlack: #333;
+  --black-20: #4f4f4f;
+  --black-40: #828282;
+  --black-60: #bdbdbd;
+  --white-60: #e0e0e0;
+  --white-40: #f2f2f2;
+  --white-20: #f5f4f6;
+  --white: #fff;
 }
 
 .App {
