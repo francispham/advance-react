@@ -6,7 +6,7 @@ export const useToggle = initial => {
   const toggle = () => setToggle(prevState => !prevState);
   const { color, bottom, y, x } = useSpring({
     x: isToggled ? 0 : 100,
-    y: isToggled ? 0 : 50,
+    y: isToggled ? 0 : 1,
     bottom: isToggled ? 0 : 3,
     color: isToggled ? "green" : "red",
     // fontSize: isToggled ? "3rem" : "7em",
@@ -20,3 +20,4 @@ export const useToggle = initial => {
   // Named properties, no order in return:
   return { isToggled, setToggle, toggle, color, bottom, y, x };
 };
+

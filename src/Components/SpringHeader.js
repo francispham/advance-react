@@ -12,8 +12,14 @@ const SpringHeader = () => {
         style={{
           color,
           fontSize: "3rem",
+          paddingTop: "1rem",
           paddingBottom: bottom.interpolate(bottom => `${bottom}rem`),
-          transform: y.interpolate(y => `translate3d(0, ${y}px, 0)`),
+          transform: y
+            .interpolate({
+              range: [0, 0.25, 0.5, 0.75, 1],
+              output: [0, -25, -50, 100, -50]
+            })
+            .interpolate(y => `translate3d(0, ${y}px, 0)`),
         }}
       >
         React Advance
