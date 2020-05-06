@@ -5,6 +5,7 @@ import './App.css';
 
 import { PageWrapper } from './state';
 
+import Checkout from './components/Checkout';
 import SpringHeader from './components/SpringHeader';
 import Theme from './components/Theme';
 import Local from './components/Local';
@@ -29,6 +30,14 @@ function App() {
           <Header>
             <Nav />
             <Menu />
+            <Toggle>
+              {({toggle, isToggled, x}) => (
+                <>
+                  <Checkout isOpen={isToggled} x={x} />
+                  <button onClick={toggle}>Checkout</button>
+                </>
+              )}
+            </Toggle>
           </Header>
           <Container>
             <SpringHeader />

@@ -10,7 +10,6 @@ const Menu = () => {
     <MenuButton
       onClick={toggleMenu}
     >
-      Header
       <svg viewBox="0 0 18 15" width="20">
         <path
           fill="#fff"
@@ -32,11 +31,5 @@ const Menu = () => {
 export default Menu;
 
 const MenuButton = styled.button`
-  appearance: none;
-  color: white;
-  font-weight: bold;
-  font-size: 1.5rem;
-  background: none;
-  border: none;
-  z-index: 15;
+
 `;
