@@ -6,38 +6,31 @@ import { useAppState } from '../state';
 import { useScrollFreeze } from '../hooks';
 
 import { Button } from 'Elements';
-import { Link } from 'react-router-dom';
 
 
 const Nav = () => {
-  const { isMenuOpen, toggleMenu, x } = useAppState();
-  const scrollFreeze = useScrollFreeze;
-  if(isMenuOpen) {scrollFreeze()}
-  // useScrollFreeze();     => Use this with NavWrapper
+  const { isMenuOpen, toggleMenu } = useAppState();
+  // const { isMenuOpen, toggleMenu, x } = useAppState();    => With React Spring Only
+  useScrollFreeze();
+  if(!isMenuOpen) return null;
   return (
     <Navigation
-      style={{
-        transform: x.interpolate((x) => `translate3d(${x}%, 0, 0)`),
-      }}
+      // style={{           => With React Spring Only
+      //   transform: x.interpolate((x) => `translate3d(${x}%, 0, 0)`),
+      // }}
     >
       <nav>
-        <Link>Home</Link>
-        <Link>About</Link>
-        <Link>Story</Link>
-        <Link>Contact</Link>
+        <a href="/#">Home</a>
+        <a href="/#">About</a>
+        <a href="/#">Story</a>
+        <a href="/#">Contact</a>
       </nav>
       <Button onClick={toggleMenu}>Close</Button>
     </Navigation>
   );
 };
 
-export default Nav; //This Approach is for implementing React Spring Only!
-
-/* For React Spring to work, NavWrapper below should not be used,
-because this line `if (!isMenuOpen) return null;` will make Nav
-Component disappeared, and therefore, the Animation when closing
-Side Nav doesn't work:
-
+// Do not need for React Spring
 const NavWrapper = () => {
   const { isMenuOpen } = useAppState();
   if (!isMenuOpen) return null;
@@ -45,7 +38,11 @@ const NavWrapper = () => {
 }
 
 export default NavWrapper;
+
+/* For React Spring to work:
+export default Nav;
 */
+
 
 const Navigation = styled(animated.nav)`
   background: var(--black);

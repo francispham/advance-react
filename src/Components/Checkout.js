@@ -27,7 +27,7 @@ const CheckoutPage = styled.div`
   z-index: 10;
   display: flex;
   position: fixed;
-  pointer-events: ${props => props.isOpen ? 'all' : 'none'};
+  pointer-events: ${(props) => (props.isOpen ? "all" : "none")};
 
   .checkout-left {
     width: 30%;
@@ -39,7 +39,7 @@ const CheckoutPage = styled.div`
     height: 100%;
     background: var(--purp);
   }
-  
+
   button {
     appearance: none;
     color: white;

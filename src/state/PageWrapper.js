@@ -6,14 +6,15 @@ export const AppContext = createContext({
 });
 
 export const PageWrapper = ({ children }) => {
-  const { isToggled, toggle, x } = useToggle(false);
+  const { isToggled, toggle } = useToggle(false);
+  // const { isToggled, toggle, x } = useToggle(false);       => With React Spring Only
 
   return (
     <AppContext.Provider
       value={{
         isMenuOpen: isToggled,
         toggleMenu: toggle,
-        x: x,
+        // x: x,        => With React Spring Only
       }}
     >
       {children}
