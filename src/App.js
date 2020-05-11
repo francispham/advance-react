@@ -27,8 +27,8 @@ function App() {
     <PageWrapper>
       <Router>
         <div className="App">
+          <Nav />
           <Header>
-            <Nav />
             <Menu />
             <Toggle>
               {({toggle, isToggled, x}) => (

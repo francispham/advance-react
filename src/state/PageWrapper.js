@@ -1,5 +1,6 @@
 import React, { createContext, useContext } from 'react';
 import { useToggle } from '../hooks';
+import { useTransition } from 'react-spring';
 
 export const AppContext = createContext({
   isMenuOpen: false
@@ -7,14 +8,18 @@ export const AppContext = createContext({
 
 export const PageWrapper = ({ children }) => {
   const { isToggled, toggle } = useToggle(false);
-  // const { isToggled, toggle, x } = useToggle(false);       => With React Spring Only
+  const transition = useTransition(isToggled, null, {  // 'null' because there's only One Key!
+    from: {opacity: 0},
+    enter: {opacity: 1},
+    leave: {opacity: 0},
+  });
 
   return (
     <AppContext.Provider
       value={{
         isMenuOpen: isToggled,
         toggleMenu: toggle,
-        // x: x,        => With React Spring Only
+        transition: transition,
       }}
     >
       {children}

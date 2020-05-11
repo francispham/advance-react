@@ -3,45 +3,32 @@ import styled from 'styled-components';
 import { animated } from 'react-spring';
 
 import { useAppState } from '../state';
-import { useScrollFreeze } from '../hooks';
+// import { useScrollFreeze } from '../hooks';
 
 import { Button } from 'Elements';
 
-
-const Nav = () => {
-  const { isMenuOpen, toggleMenu } = useAppState();
-  // const { isMenuOpen, toggleMenu, x } = useAppState();    => With React Spring Only
-  useScrollFreeze();
-  if(!isMenuOpen) return null;
+const NavWrapper = () => {
+  const { toggleMenu, transition } = useAppState();
   return (
-    <Navigation
-      // style={{           => With React Spring Only
-      //   transform: x.interpolate((x) => `translate3d(${x}%, 0, 0)`),
-      // }}
-    >
-      <nav>
-        <a href="/#">Home</a>
-        <a href="/#">About</a>
-        <a href="/#">Story</a>
-        <a href="/#">Contact</a>
-      </nav>
-      <Button onClick={toggleMenu}>Close</Button>
-    </Navigation>
+    <>
+      {transition.map(
+        ({ item, key, props }) =>
+          item && 
+            <Navigation key={key} style={props}>
+              <nav>
+                <a href="/#">Home</a>
+                <a href="/#">About</a>
+                <a href="/#">Story</a>
+                <a href="/#">Contact</a>
+              </nav>
+              <Button onClick={toggleMenu}>Close</Button>
+            </Navigation>
+      )}
+    </>
   );
 };
 
-// Do not need for React Spring
-const NavWrapper = () => {
-  const { isMenuOpen } = useAppState();
-  if (!isMenuOpen) return null;
-  return <Nav />;
-}
-
 export default NavWrapper;
-
-/* For React Spring to work:
-export default Nav;
-*/
 
 
 const Navigation = styled(animated.nav)`
