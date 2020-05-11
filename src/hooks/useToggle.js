@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useSpring } from "react-spring";
+import { useTransition, useSpring } from "react-spring";
 
 export const useToggle = initial => {
   const [ isToggled, setToggle ] = useState(initial);
@@ -17,7 +17,15 @@ export const useToggle = initial => {
   // If Needed to Rename Output, use this multiple uses of hook:
   // return [isToggled, setToggle, toggle];
 
+  
+  const transition = useTransition(isToggled, null, {
+    // 'null' because there's only One Key!
+    from: { opacity: 0, position: 'absolute' },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+  
   // Named properties, no order in return:
-  return { isToggled, setToggle, toggle, color, bottom, y, x };
+  return { isToggled, setToggle, toggle, color, bottom, y, x, transition };
 };
 

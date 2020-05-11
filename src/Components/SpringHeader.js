@@ -5,9 +5,19 @@ import { useToggle } from "../hooks";
 import { Button } from "Elements";
 
 const SpringHeader = () => {
-  const { toggle, color, y, bottom } = useToggle();
+  const { toggle, color, y, bottom, transition } = useToggle();
+
   return (
     <header>
+      <div style={{ position: 'relative', textAlign: 'center' }}>
+        {transition.map(({ item, props }) =>
+          item ? (
+            <animated.h2 style={props}>Hello</animated.h2>
+          ) : (
+            <animated.h2 style={props}>Hi</animated.h2>
+          )
+        )}
+      </div>
       <animated.h1 
         style={{
           color,

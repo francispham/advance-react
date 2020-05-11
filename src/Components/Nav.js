@@ -9,22 +9,19 @@ import { Button } from 'Elements';
 
 const NavWrapper = () => {
   const { toggleMenu, transition } = useAppState();
-  return (
-    <>
-      {transition.map(
-        ({ item, key, props }) =>
-          item && 
-            <Navigation key={key} style={props}>
-              <nav>
-                <a href="/#">Home</a>
-                <a href="/#">About</a>
-                <a href="/#">Story</a>
-                <a href="/#">Contact</a>
-              </nav>
-              <Button onClick={toggleMenu}>Close</Button>
-            </Navigation>
-      )}
-    </>
+
+  return transition.map(
+    ({ item, key, props }) =>
+      item &&
+        <Navigation key={key} style={props}>
+          <nav>
+            <a href="/#">Home</a>
+            <a href="/#">About</a>
+            <a href="/#">Story</a>
+            <a href="/#">Contact</a>
+          </nav>
+          <Button onClick={toggleMenu}>Close</Button>
+        </Navigation>
   );
 };
 

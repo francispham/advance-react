@@ -25,75 +25,72 @@ import { Button, Header, Container } from 'Elements';
 function App() {
   return (
     <PageWrapper>
-      <Router>
-        <div className="App">
-          <Nav />
-          <Header>
-            <Menu />
-            <Toggle>
-              {({toggle, isToggled, x}) => (
-                <>
-                  <Checkout isOpen={isToggled} x={x} />
-                  <button onClick={toggle}>Checkout</button>
-                </>
-              )}
-            </Toggle>
-          </Header>
-          <Container>
-            <SpringHeader />
-            <section>
-              <Link to="/user">
-                <Button>User Account</Button>
-              </Link>
-              <Link to="/coolCards">
-                <Button>CoolCards</Button>
-              </Link>
-              <Switch>
-                <Route exact path="/" />
-                <Route exact path="/coolCards" component={CoolCards} />
-                <Route exact path="/user" component={User} />
-              </Switch>
-            </section>
-            <section>
-              <Theme />
-            </section>
-            <section>
-              <Local />
-            </section>
-            <section>
-              <Script />
-            </section>
-            <section>
-              <Cookie />
-            </section>
-            <section>
-              <Inc />
-            </section>
-            <section>
-              <Mount />
-            </section>
-            <section>
-              <Hover />
-            </section>
-          </Container>
-
-          <footer>
-            <Toggle>
-              {({ isToggled, toggle }) => (
-                <>
-                  {isToggled && (
-                    <Link to="/">
-                      <h1>Back Home</h1>
-                    </Link>
-                  )}
-                  <Button onClick={toggle}>Show/Hide</Button>
-                  <Portal>{isToggled && <h1>Hi, I am in A Portal</h1>}</Portal>
-                </>
-              )}
-            </Toggle>
-          </footer>
-        </div>
-      </Router>
+      <div className="App">
+        <Nav />
+        <Header>
+          <Menu />
+          <Toggle>
+            {({toggle, isToggled, x}) => (
+              <>
+                <Checkout isOpen={isToggled} x={x} />
+                <button onClick={toggle}>Checkout</button>
+              </>
+            )}
+          </Toggle>
+        </Header>
+        <Container>
+          <SpringHeader />
+          <Router>
+            <Link to="/user">
+              <Button>User Account</Button>
+            </Link>
+            <Link to="/coolCards">
+              <Button>CoolCards</Button>
+            </Link>
+            <Switch>
+              <Route exact path="/" />
+              <Route exact path="/coolCards" component={CoolCards} />
+              <Route exact path="/user" component={User} />
+            </Switch>
+            <>
+              <Toggle>
+                {({ isToggled, toggle }) => (
+                  <>
+                    {isToggled && (
+                      <Link to="/">
+                        <h1>Back Home</h1>
+                      </Link>
+                    )}
+                    <Button onClick={toggle}>Show/Hide</Button>
+                    <Portal>{isToggled && <h1>Hi, I am in A Portal</h1>}</Portal>
+                  </>
+                )}
+              </Toggle>
+            </>
+          </Router>
+          <section>
+            <Theme />
+          </section>
+          <section>
+            <Local />
+          </section>
+          <section>
+            <Script />
+          </section>
+          <section>
+            <Cookie />
+          </section>
+          <section>
+            <Inc />
+          </section>
+          <section>
+            <Mount />
+          </section>
+          <section>
+            <Hover />
+          </section>
+        </Container>
+      </div>
     </PageWrapper>
   );
 };
