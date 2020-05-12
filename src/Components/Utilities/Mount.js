@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useMount, useUnmount, useToggle } from '../../hooks';
 
-import { Button } from 'Elements';
+import { Button } from '../Elements';
 
 const Mount = () => {
   const { isToggled, toggle } = useToggle();

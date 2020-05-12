@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { Card } from 'Elements';
-import { green } from "Backgrounds";
+import { Card } from './Elements';
+import { green } from './Backgrounds';
 
 import { useHover, useWindowWidth, useMeasure } from '../hooks';
 

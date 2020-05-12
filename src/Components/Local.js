@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocalStorage } from '../hooks';
-import { StyledCard } from "Elements";
+import { StyledCard } from './Elements';
 
 const Local = () => {
   const [value, setValue] = useLocalStorage("Test", "I am initial");

@@ -2,8 +2,8 @@ import React from 'react';
 
 
 // Absolute Imports: (Does not Need Directory)
-import { blue, purp, black, green } from "Backgrounds";
-import { Container, Card, CardGrid } from "Elements";
+import { blue, purp, black, green } from './Backgrounds';
+import { Container, Card, CardGrid } from './Elements';
 
 const CoolCards = () => {
   return (

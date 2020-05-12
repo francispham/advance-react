@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
-// Absolute Imports: (For Things Won't Change!) 
-import { Portal, absolute } from 'Utilities';
-
-// import { Card, Icon } from "Elements"; has to be:
 import Icon from './Icon';
 import { Card } from './Cards';
+
+import { Portal } from "../Utilities";
+import { absolute } from "../Utilities/position";
 
 export default class Modal extends Component {
   render() {

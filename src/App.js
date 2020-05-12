@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import './App.css';
 
 import { PageWrapper } from './state';
 
+import Routes from './Routes';
 import Checkout from './components/Checkout';
 import SpringHeader from './components/SpringHeader';
 import Theme from './components/Theme';
@@ -15,12 +15,9 @@ import Nav from './components/Nav';
 import Hover from './components/Hover';
 import Inc from './components/Inc';
 import Menu from './components/Menu';
-import User from './components/User';
-import CoolCards from './components/CoolCards';
 
-// Absolute Imports: (Does not Need Directory)
-import { Toggle, Portal, Mount } from 'Utilities';
-import { Button, Header, Container } from 'Elements';
+import { Toggle, Mount } from './components/Utilities';
+import { Header, Container } from './components/Elements';
 
 function App() {
   return (
@@ -40,55 +37,30 @@ function App() {
         </Header>
         <Container>
           <SpringHeader />
-          <Router>
-            <Link to="/user">
-              <Button>User Account</Button>
-            </Link>
-            <Link to="/coolCards">
-              <Button>CoolCards</Button>
-            </Link>
-            <Switch>
-              <Route exact path="/" />
-              <Route exact path="/coolCards" component={CoolCards} />
-              <Route exact path="/user" component={User} />
-            </Switch>
-            <>
-              <Toggle>
-                {({ isToggled, toggle }) => (
-                  <>
-                    {isToggled && (
-                      <Link to="/">
-                        <h1>Back Home</h1>
-                      </Link>
-                    )}
-                    <Button onClick={toggle}>Show/Hide</Button>
-                    <Portal>{isToggled && <h1>Hi, I am in A Portal</h1>}</Portal>
-                  </>
-                )}
-              </Toggle>
-            </>
-          </Router>
-          <section>
-            <Theme />
-          </section>
-          <section>
-            <Local />
-          </section>
-          <section>
-            <Script />
-          </section>
-          <section>
-            <Cookie />
-          </section>
-          <section>
-            <Inc />
-          </section>
-          <section>
-            <Mount />
-          </section>
-          <section>
-            <Hover />
-          </section>
+          <Routes />
+          <main>
+            <section>
+              <Theme />
+            </section>
+            <section>
+              <Local />
+            </section>
+            <section>
+              <Script />
+            </section>
+            <section>
+              <Cookie />
+            </section>
+            <section>
+              <Inc />
+            </section>
+            <section>
+              <Mount />
+            </section>
+            <section>
+              <Hover />
+            </section>
+          </main>
         </Container>
       </div>
     </PageWrapper>

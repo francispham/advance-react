@@ -5,7 +5,7 @@ import { animated } from 'react-spring';
 import { useAppState } from '../state';
 // import { useScrollFreeze } from '../hooks';
 
-import { Button } from 'Elements';
+import { Button } from './Elements';
 
 const NavWrapper = () => {
   const { toggleMenu, transition } = useAppState();

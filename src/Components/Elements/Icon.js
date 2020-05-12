@@ -1,14 +1,12 @@
-/* eslint-disable default-case */
 import React, { Component } from 'react';
 import styled from "styled-components";
-
-import { colors } from 'Utilities';
+import { custom, custom1 } from "../Utilities/colors";
 
 export default class Icon extends Component {
   static defaultProps = {
-    color: `${colors.custom1}`
+    color: `${custom1}`
   }
-
+  
   render() {
     switch (this.props.name) {
       case 'close':
@@ -24,6 +22,8 @@ export default class Icon extends Component {
             />
           </SVG>
         );
+      default:
+        return null;
     }
   }
 };
@@ -36,7 +36,7 @@ const SVG = styled.svg`
 
 const Polygon = styled.polygon`
   ${SVG}:hover & {
-    fill: ${colors.custom};
+    fill: ${custom};
   }
 `;
 

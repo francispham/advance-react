@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { useTransition, animated } from "react-spring";
+import React, { useState } from 'react';
+import { useTransition, animated } from 'react-spring';
 
-import { useToggle } from "../hooks";
-import { Button } from "Elements";
+import { useToggle } from '../hooks';
+import { Button } from './Elements';
 
 const SpringHeader = () => {
   const { toggle, color, y, bottom, transition } = useToggle();

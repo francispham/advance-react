@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { custom, custom1, black } from "Utilities";
+import { custom, custom1, black } from '../Utilities';
 
 export const Button = styled.button`
   display: inline-block;

@@ -2,7 +2,7 @@ import React from 'react';
 
 import { useInc } from '../hooks';
 
-import { Button } from 'Elements';
+import { Button } from './Elements';
 
 const Inc = () => {
   const [volume, { inc, dec, reset }] = useInc({

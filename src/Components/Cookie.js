@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useCookies } from '../hooks';
-import { StyledCard } from "Elements";
+import { StyledCard } from './Elements';
 
 const Cookie = () => {
   const [ cookie, setCookie ] = useCookies({ key: "1st Key" });
