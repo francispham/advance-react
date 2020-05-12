@@ -1,5 +1,5 @@
-import React from "react";
-import { animated } from "react-spring";
+import React, { useState } from "react";
+import { useTransition, animated } from "react-spring";
 
 import { useToggle } from "../hooks";
 import { Button } from "Elements";
@@ -7,14 +7,38 @@ import { Button } from "Elements";
 const SpringHeader = () => {
   const { toggle, color, y, bottom, transition } = useToggle();
 
+  const [items, setItems] = useState([
+    {
+      number: 1,
+      key: 1
+    },
+    {
+      number: 2,
+      key: 2
+    },
+    {
+      number: 3,
+      key: 3
+    },
+    {
+      number: 4,
+      key: 4
+    },
+  ]);
+  const transitions = useTransition(items, item => item.key, {
+    from: { opacity: 0 },
+    enter: { opacity: 1 },
+    leave: { opacity: 0 },
+  });
+
   return (
     <header>
       <div style={{ position: 'relative', textAlign: 'center' }}>
-        {transition.map(({ item, props }) =>
+        {transition.map(({ item, key, props }) =>
           item ? (
-            <animated.h2 style={props}>Hello</animated.h2>
+            <animated.h2 key={key} style={props}>Hello</animated.h2>
           ) : (
-            <animated.h2 style={props}>Hi</animated.h2>
+            <animated.h2 key={key} style={props}>Hi</animated.h2>
           )
         )}
       </div>
@@ -34,7 +58,27 @@ const SpringHeader = () => {
       >
         React Advance
       </animated.h1>
-      <Button onClick={toggle}>React Spring</Button>
+
+      <Button onClick={toggle}>
+          React Spring
+      </Button>
+      <Button onClick={
+        () => setItems([{
+          number: 3,
+          key: 3
+        }])
+      }>
+        React Spring Transition Multi Comps
+      </Button>
+      <div style={{ fontSize: '5rem'}}>
+        {
+          transitions.map(({ item, key, props }) => (
+            <animated.span style={props} key={key}>
+              {item.number}
+            </animated.span>
+          ))
+        }
+      </div>
     </header>
   );
 };
