@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { __RouterContext } from "react-router";
 import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import User from './components/User';
@@ -7,7 +8,9 @@ import CoolCards from './components/CoolCards';
 import { Button } from './components/Elements';
 import { Toggle, Portal } from './components/Utilities';
 
-
+function useRouter() {
+  return useContext(__RouterContext);
+}
 const Routes = () => {
   return (
     <Router>
@@ -36,15 +39,25 @@ const Routes = () => {
           )}
         </Toggle>
       </>
-      
+
+      <Main />
+    </Router>
+  )
+}
+
+const Main = () => {
+  const { location } = useRouter();
+  console.log('Location: ', location)
+  return (
+    <div>
       <Switch>
         <Route exact path="/" />
         <Route exact path="/coolCards" component={CoolCards} />
         <Route exact path="/user" component={User} />
       </Switch>
-
-    </Router>
+    </div>
   )
-}
+};
 
 export default Routes;
+
