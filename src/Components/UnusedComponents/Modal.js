@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 
 import Icon from './Icon';
@@ -7,23 +7,25 @@ import { Card } from './Cards';
 import { Portal } from "../Utilities";
 import { absolute, fixed } from "../Utilities/position";
 
-const Modal = ({ toggle, isToggled, children }) => {
-  console.log(this);
-  return (
-    <Portal>
-      {isToggled && (
-        <ModalWrapper>
-          <ModalCard>
-            <CloseButton onClick={toggle}>
-              <Icon name="close" />
-            </CloseButton>
-            <>{children}</>
-          </ModalCard>
-          <Background onClick={toggle} />
-        </ModalWrapper>
-      )}
-    </Portal>
-  );
+export default class Modal extends Component {
+  render() {
+    const { children, toggle, isToggled } = this.props;
+    return (
+      <Portal>
+        {isToggled &&
+          <ModalWrapper>
+            <ModalCard>
+              <CloseButton onClick={toggle}>
+                <Icon name="close" />
+              </CloseButton>
+              <>{children}</>
+            </ModalCard>
+            <Background onClick={toggle}/>
+          </ModalWrapper>
+        }
+      </Portal>
+    );
+  };
 };
 
 export default Modal;
