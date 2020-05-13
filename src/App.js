@@ -27,7 +27,7 @@ function App() {
         <Header>
           <Menu />
           <Toggle>
-            {({toggle, isToggled, x}) => (
+            {({ toggle, isToggled, x }) => (
               <>
                 <Checkout isOpen={isToggled} x={x} />
                 <button onClick={toggle}>Checkout</button>
@@ -37,7 +37,6 @@ function App() {
         </Header>
         <Container>
           <SpringHeader />
-          <Routes />
           <main>
             <section>
               <Theme />
@@ -61,6 +60,7 @@ function App() {
               <Hover />
             </section>
           </main>
+          <Routes />
         </Container>
       </div>
     </PageWrapper>

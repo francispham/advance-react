@@ -33,15 +33,15 @@ const ModalWrapper = styled.div`
   width: 100%;
   height:100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-`;
+  justify-content: center;
+  `;
 
 const ModalCard = styled(Card)`
   position: relative;
   min-width: 520px;
-  z-index: 10;
-  opacity: 0.95;
+  z-index: 20;
+  opacity: 0.95; 
   margin-bottom: 7rem;
 `;
 
