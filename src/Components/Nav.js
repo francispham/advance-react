@@ -6,6 +6,7 @@ import { useAppState } from '../state';
 // import { useScrollFreeze } from '../hooks';
 
 import { Button } from './Elements';
+import { fixed } from "./Utilities/position";
 
 const NavWrapper = () => {
   const { toggleMenu, transition } = useAppState();
@@ -31,19 +32,19 @@ export default NavWrapper;
 const Navigation = styled(animated.nav)`
   background: var(--black);
   color: white;
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 1;
+  ${fixed({
+    y: "top",
+    x: "left",
+    r: "right",
+    b: "bottom",
+  })};
   padding: 100px;
 
   a {
-    display: block;
-    text-align: left;
-    font-size: 4rem;
     color: white;
+    display: block;
+    font-size: 4rem;
+    text-align: left;
     text-decoration: none;
     transition: 0.3s ease border;
     border-bottom: solid 4px transparent;

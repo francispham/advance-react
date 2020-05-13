@@ -5,7 +5,7 @@ import Icon from './Icon';
 import { Card } from './Cards';
 
 import { Portal } from "../Utilities";
-import { absolute } from "../Utilities/position";
+import { absolute, fixed } from "../Utilities/position";
 
 export default class Modal extends Component {
   render() {
@@ -29,20 +29,24 @@ export default class Modal extends Component {
 };
 
 const ModalWrapper = styled.div`
-  ${absolute({})};
-  width: 100%;
-  height:100%;
+  ${fixed({
+    y: 'top',
+    x: 'left',
+    r: 'right',
+    b: 'bottom',
+  })};
   display: flex;
   align-items: center;
   justify-content: center;
-  `;
+`;
 
 const ModalCard = styled(Card)`
-  position: relative;
+  z-index: 2;
+  opacity: 0.95;
   min-width: 520px;
-  z-index: 20;
-  opacity: 0.95; 
+  position: relative;
   margin-bottom: 7rem;
+  background: var(--green);
 `;
 
 const CloseButton = styled.button`
@@ -50,14 +54,14 @@ const CloseButton = styled.button`
     y: 'top',
     x: 'right'
   })};
-  background: transparent;
   padding: 10px;
+  background: transparent;
 `;
 
 const Background = styled.div`
   ${absolute({})};
   width: 100%;
   height: 100%;
-  background: black;
   opacity: 0.5;
+  background: black;
 `;

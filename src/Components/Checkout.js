@@ -2,6 +2,8 @@ import React from 'react';
 import styled from "styled-components";
 import { animated } from 'react-spring';
 
+import { fixed } from "./Utilities/position";
+
 const Checkout = ({ x, isOpen }) => {
   return (
     <CheckoutPage isOpen={isOpen}>
@@ -20,13 +22,14 @@ const Checkout = ({ x, isOpen }) => {
 export default Checkout;
 
 const CheckoutPage = styled.div`
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  ${fixed({
+    y: "top",
+    x: "left",
+    b: "bottom",
+    r: "right",
+  })};
   z-index: 10;
   display: flex;
-  position: fixed;
   pointer-events: ${(props) => (props.isOpen ? "all" : "none")};
 
   .checkout-left {
