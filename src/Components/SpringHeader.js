@@ -60,7 +60,7 @@ const SpringHeader = () => {
             .interpolate((y) => `translate3d(0, ${y}px, 0)`),
         }}
       >
-        React Advance
+        React Spring
       </animated.h1>
 
       <Button
@@ -75,7 +75,7 @@ const SpringHeader = () => {
           ]);
         }}
       >
-        React Spring
+        Animating Title
       </Button>
       <Button onClick={() => setItems(original)}>
         Back To Original

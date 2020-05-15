@@ -4,9 +4,9 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import { animated, useTransition } from 'react-spring';
 
 
-import Hooks from "./Hooks";
-import User from './components/User';
-import CoolCards from './components/CoolCards';
+import User from './Pages/User';
+import HooksList from './Pages/HooksList';
+import ReactSpring from './Pages/ReactSpring';
 
 import { Button } from './components/Elements';
 import { Toggle, Portal } from './components/Utilities';
@@ -18,33 +18,52 @@ function useRouter() {
 const Routes = () => {
   return (
     <Router>
-      <Link to="/Hooks">
-        <Button>React Hooks</Button>
-      </Link>
-      <Link to="/user">
-        <Button>User Account</Button>
-      </Link>
-      <Link to="/coolCards">
-        <Button>CoolCards</Button>
-      </Link>
-
-      <>
-        <Toggle>
-          {({ isToggled, toggle }) => (
-            <>
-              <Button onClick={toggle}>Open/Close Portal</Button>
+      <Toggle>
+        {({ isToggled, toggle }) => (
+          <>
+            {isToggled && (
+              <Link to="/">
+                <Button>Back Home</Button>
+              </Link>
+            )}
+            <Button onClick={toggle}>Open/Close Portal</Button>
+            <Portal>
               {isToggled && (
-                <Link to="/"><p>Back Home</p></Link>
+                <h1 style={{ position: "absolute", top: "4rem" }}>
+                  Hi, I am in A Portal
+                </h1>
               )}
-              <Portal>{isToggled && <h1>Hi, I am in A Portal</h1>}</Portal>
-            </>
-          )}
-        </Toggle>
-      </>
+            </Portal>
+          </>
+        )}
+      </Toggle>
+      <Toggle>
+        {({ isToggled, toggle }) => (
+          <>
+            <Button onClick={toggle}>Routes</Button>
+            {isToggled && (
+              <div>
+                <Link to="/">
+                  <Button>Home</Button>
+                </Link>
+                <Link to="/ReactSpring">
+                  <Button>React Spring</Button>
+                </Link>
+                <Link to="/HooksList">
+                  <Button>Hooks List</Button>
+                </Link>
+                <Link to="/user">
+                  <Button>User Account</Button>
+                </Link>
+              </div>
+            )}
+          </>
+        )}
+      </Toggle>
 
       <Main />
     </Router>
-  )
+  );
 }
 
 const Main = () => {
@@ -68,8 +87,8 @@ const Main = () => {
       <Switch location={item}>
         <Route exact path="/" />
         <Route exact path="/user" component={User} />
-        <Route exact path="/Hooks" component={Hooks} />
-        <Route exact path="/coolCards" component={CoolCards} />
+        <Route exact path="/HooksList" component={HooksList} />
+        <Route exact path="/ReactSpring" component={ReactSpring} />
       </Switch>
     </animated.div>
   ));

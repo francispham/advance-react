@@ -9,9 +9,6 @@ import Routes from './Routes';
 import Nav from './components/Nav';
 import Menu from './components/Menu';
 import Checkout from './components/Checkout';
-import Waypoints from './components/Waypoints';
-import Accordion from './components/Accordion';
-import SpringHeader from './components/SpringHeader';
 
 import { Toggle } from './components/Utilities';
 import { Header, Container } from './components/Elements';
@@ -33,9 +30,7 @@ function App() {
           </Toggle>
         </Header>
         <Container>
-          <SpringHeader />
-          <Accordion />
-          <Waypoints />
+          <h1 style={{ fontSize: "3rem", color: "darkGreen" }}>REACT ADVANCE</h1>
           <Routes />
         </Container>
       </div>

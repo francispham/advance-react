@@ -3,8 +3,8 @@ import React from 'react';
 import { UserProvider, useUserState } from '../state';
 
 // Absolute Imports: (Does not Need Directory)
-import { Toggle, } from './Utilities';
-import { Modal, Button } from './Elements';
+import { Toggle, } from '../components/Utilities';
+import { Modal, Button } from '../components/Elements';
 
 function User() {
   return (
