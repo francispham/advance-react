@@ -1,6 +1,14 @@
-import React from "react";
+import React, { useState } from 'react';
+import { Waypoint } from 'react-waypoint';
+import { animated, useSpring, config } from 'react-spring';
 
 const Waypoints = () => {
+  const [ on, toggle ] = useState(false);
+  const animation = useSpring({
+    opacity: on ? 1 : 0,
+    transform: on ? "translate3d(0,0,0)" : "translate3d(50%,0,0)",
+    config: config.molasses,
+  });
   return (
     <div className="waypoints">
       <p>
@@ -28,8 +36,16 @@ const Waypoints = () => {
         hell of. Pork belly helvetica cornhole gentrify microdosing austin
         chillwave pitchfork paleo cred raclette venmo vegan fashion axe +1.
       </p>
-      <p>
-        Craft beer tousled ennui ugh, williamsburg stumptown flexitarian plaid
+
+      <Waypoint 
+        topOffset='30%'
+        onEnter={() => {
+          if (!on) toggle(true);
+        }}
+      />
+      
+      <animated.p style={animation}>
+        Craft beer tousled ennui ugh, williamsburg stumanimated.ptown flexitarian plaid
         activated charcoal. Taxidermy letterpress glossier 8-bit, organic
         bitters coloring book. Selvage lo-fi typewriter wolf ugh, lyft four loko
         chillwave bitters mustache tumblr copper mug subway tile. Fanny pack
@@ -37,7 +53,7 @@ const Waypoints = () => {
         DIY authentic normcore man braid you probably haven't heard of them.
         Mustache humblebrag umami beard williamsburg. Prism hexagon VHS, paleo
         tacos narwhal etsy fashion axe ennui schlitz ethical echo park vinyl.
-      </p>
+      </animated.p>
       <p>
         Health goth af scenester irony, farm-to-table austin intelligentsia man
         bun celiac flexitarian yuccie marfa kickstarter banh mi gluten-free.
