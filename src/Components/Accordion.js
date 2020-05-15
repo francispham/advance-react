@@ -4,6 +4,7 @@ import { useSpring, animated } from 'react-spring';
 
 import { useMeasure } from '../hooks';
 import { Button } from './Elements/Button';
+import { custom1, black } from "./Utilities";
 
 const Accordion = () => {
   const [ on, toggle ] = useState(false);
@@ -36,9 +37,10 @@ const Accordion = () => {
 export default Accordion;
 
 const AccordionDiv = styled.div`
+  padding: 20px;
   div div {
-    background: white;
-    color: black;
+    background: ${custom1};
+    color: ${black};
     padding: 20px;
     border: solid 1px #eee;
     overflow: hidden;
