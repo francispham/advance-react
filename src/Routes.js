@@ -54,8 +54,9 @@ const Main = () => {
   const transitions = useTransition(location, (location) => location.key, {
     from: {
       position: "absolute",
+      right: 0,
+      left: 0,
       opacity: 0,
-      width: "100%",
       transform: "translate3d(100%, 0, 0)",
     },
     enter: { opacity: 1, transform: "translate3d(0, 0, 0)" },

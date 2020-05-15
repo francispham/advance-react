@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useTransition, useSpring } from "react-spring";
+import { useTransition, useSpring, config } from "react-spring";
 
 export const useToggle = initial => {
   const [ isToggled, setToggle ] = useState(initial);
@@ -12,6 +12,12 @@ export const useToggle = initial => {
     // fontSize: isToggled ? "3rem" : "7em",
     // opacity: isToggled ? 1 : 0.5,
     // transform: isToggled ? "translate3d(0,0,0)" : "translate3d(250px,0,0)",
+
+    // config:{           // => Do not need to import config from React Spring!
+    //   tension: 400,
+    //   friction: 200
+    // },
+    config: config.molasses
   });
 
   // If Needed to Rename Output, use this multiple uses of hook:

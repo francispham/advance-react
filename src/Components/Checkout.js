@@ -4,6 +4,7 @@ import { animated } from 'react-spring';
 
 import { fixed } from "./Utilities/position";
 
+
 const Checkout = ({ x, isOpen }) => {
   return (
     <CheckoutPage isOpen={isOpen}>

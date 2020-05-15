@@ -59,8 +59,8 @@ function App() {
             <section>
               <Hover />
             </section>
+            <Routes />
           </main>
-          <Routes />
         </Container>
       </div>
     </PageWrapper>
