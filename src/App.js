@@ -4,6 +4,7 @@ import './App.css';
 
 import { PageWrapper } from './state';
 
+import Accordion from './components/Accordion';
 import Routes from './Routes';
 import Checkout from './components/Checkout';
 import SpringHeader from './components/SpringHeader';
@@ -37,6 +38,8 @@ function App() {
         </Header>
         <Container>
           <SpringHeader />
+          <Accordion />
+
           <main>
             <section>
               <Theme />
@@ -59,8 +62,9 @@ function App() {
             <section>
               <Hover />
             </section>
-            <Routes />
           </main>
+          
+          <Routes />
         </Container>
       </div>
     </PageWrapper>
