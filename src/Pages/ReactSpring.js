@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Gesture from '../components/Gesture';
+import Gestures from '../components/Gestures/index';
 import Accordion from '../components/Accordion';
 import Waypoints from '../components/Waypoints';
 import SpringHeader from '../components/SpringHeader';
@@ -28,8 +28,7 @@ const ReactSpring = () => {
           </div>
         )}
       </Toggle>
-      <h1>React with Gesture</h1>
-      <Gesture />
+      <Gestures />
     </div>
   );
 }
