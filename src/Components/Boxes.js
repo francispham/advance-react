@@ -31,11 +31,11 @@ const Boxes = () => {
   return (
     <FlexBoxes>
       <div>
-        {trail.map(animation => <Box style={animation}/>)}
+        {trail.map((animation, items) => <Box key={items} style={animation}/>)}
       </div>
       <Button onClick={() => toggle(!on)}>Trail Animation</Button>
       <div>
-        {springs.map(animation => <Box style={animation}/>)}
+        {springs.map((animation, items) => <Box key={items} style={animation}/>)}
       </div>
     </FlexBoxes>
   );

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import ChainTran from '../components/ChainTran';
 import Chain from '../components/Chain';
 import Boxes from '../components/Boxes';
 import Accordion from '../components/Accordion';
@@ -30,8 +31,13 @@ const ReactSpring = () => {
           </div>
         )}
       </Toggle>
-      <Chain />
-      <Boxes />
+      <ChainTran />
+      <div>
+        <h1>Full Feature with useTransition, useChain & useSpring</h1>
+        <Chain />
+        <h1>Feature with useTrail & useChain</h1>
+        <Boxes />
+      </div>
       <Gestures />
     </div>
   );

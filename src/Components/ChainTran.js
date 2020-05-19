@@ -1,9 +1,9 @@
 import React, { useState, useRef } from 'react'
-import { animated, useTrail, useSpring, useChain } from "react-spring";
+import { animated, useSpring, useChain, useTransition } from 'react-spring';
 
-import { ChainBoxes } from "./Elements";
+import { TranBoxes } from "./Elements";
 
-const items = [0.5, 0.3, 0.2, 0.7, 1];
+const items = [0.5, 0.3, 0.2, 0.7, 1, 2, 3, 4];
 
 const Chain = () => {
   const [on, toggle] = useState(false);
@@ -16,30 +16,35 @@ const Chain = () => {
   });
 
   const transitionRef = useRef();
-  const trail = useTrail(items.length, {
+  const transition = useTransition(on ? items : [], item => item, {
     ref: transitionRef,
+    trail: 400/ items.length,
     from: {
       opacity: 0,
       transform: "scale(0)",
     },
-    to: {
-      opacity: on ? 1 : 0,
-      transform: on ? "scale(1)" : "scale(0)",
+    enter: {
+      opacity: 1,
+      transform: "scale(1)",
+    },
+    leave: {
+      opacity: 0,
+      transform: "scale(0)",
     },
   });
 
   useChain(on ? [springRef, transitionRef] : [transitionRef, springRef]);
 
   return (
-    <div style={{ height: "100vh" }}>
-      <ChainBoxes
+    <div style={{ height: "100vh", marginBottom: "1rem" }}>
+      <TranBoxes
         style={{ width: size, height: size }}
         onClick={() => toggle(!on)}
       >
-        {trail.map((animation, items) => (
-          <animated.div key={items} style={animation} />
+        {transition.map(({ item, key, props }) => (
+          <animated.div key={key} style={props} />
         ))}
-      </ChainBoxes>
+      </TranBoxes>
     </div>
   );
 }
