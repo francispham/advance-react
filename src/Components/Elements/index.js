@@ -6,4 +6,5 @@ export * from './Container';
 export * from './Header';
 export * from './Cards';
 export * from './Button';
+export * from './Box';
 export { Icon, Modal, Card, CardGrid, StyledCard };

@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from 'styled-components';
 import { useGesture } from 'react-with-gesture';
-import { animated, useSpring } from 'react-spring';
+import { useSpring } from 'react-spring';
+
+import { Box } from "../Elements";
 
 const Gesture = () => {
   const [ { x }, set ] = useSpring(() => ({ x: 0 }));
@@ -23,6 +24,12 @@ const Gesture = () => {
   return (
     <Box 
       style= {{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        background: 'none',
+        border: 'groove',
+        fontSize: '7rem',
         opacity: x.interpolate({ 
           map: Math.abs,  // Apply the Effect on the Left Side
           range: [0, 400], 
@@ -36,14 +43,3 @@ const Gesture = () => {
 };
 
 export default Gesture;
-
-const Box = styled(animated.div)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100px;
-  height: 100px;
-  margin: 0 auto;
-  border: groove;
-  font-size: 7rem;
-`;

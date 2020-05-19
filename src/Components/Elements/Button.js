@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 import { custom, custom1, black } from '../Utilities';
 
+console.log('Button: ',custom, custom1)
 export const Button = styled.button`
   display: inline-block;
   text-transform: uppercase;

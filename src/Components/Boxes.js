@@ -1,35 +1,45 @@
-import React from 'react'
-import styled from "styled-components";
-import { useSprings } from "react-spring";
+import React, { useState } from 'react'
+import { useSprings, useTrail } from "react-spring";
 
-import { Box } from './Gestures/Gesture'
+import { Button } from './Elements'
+import { Box, FlexBoxes } from "./Elements";
 
 const items = [0.4, 0.6, 0.8, 1];
 
 const Boxes = () => {
+  const [ on, toggle ] = useState(false);
+
+  const trail = useTrail(items.length, {
+    opacity: on ? 0 : 1,
+    transform: on ? 'scale(0.3)' : 'scale(1)'
+  });
+
   const springs = useSprings(
-    items.length, 
-    items.map(item => ({
+    items.length,
+    items.map((item) => ({
       from: {
-        opacity: 0
+        opacity: 0,
+        transform: "scale(0)",
       },
       to: {
-        opacity: item
-      }
-    })) 
+        opacity: item,
+        transform: `scale(${item})`,
+      },
+    }))
   );
 
   return (
-    <BoxesGrid>
-      {springs.map(animation => <Box style={animation}/>)}
-    </BoxesGrid>
+    <FlexBoxes>
+      <div>
+        {trail.map(animation => <Box style={animation}/>)}
+      </div>
+      <Button onClick={() => toggle(!on)}>Trail Animation</Button>
+      <div>
+        {springs.map(animation => <Box style={animation}/>)}
+      </div>
+    </FlexBoxes>
   );
 }
 
 export default Boxes;
 
-const BoxesGrid = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
-`;

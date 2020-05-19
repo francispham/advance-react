@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from "styled-components";
+
 import Gesture from './Gesture';
 import GestureX from './GestureX';
+import { GesturesBox } from '../Elements'
 
 const index = () => {
   return (
@@ -16,10 +17,3 @@ const index = () => {
 }
 
 export default index;
-
-const GesturesBox = styled.div`
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 20px;
-  min-height: 100vh;
-`;

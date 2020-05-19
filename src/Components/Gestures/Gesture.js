@@ -1,7 +1,8 @@
 import React from 'react'
-import styled from 'styled-components';
 import { useGesture } from 'react-with-gesture';
-import { animated, useSpring } from 'react-spring';
+import { useSpring } from 'react-spring';
+
+import { Box } from '../Elements';
 
 const Gesture = () => {
   const [ { xy }, set ] = useSpring(() => ({ xy: [0, 0] }));
@@ -23,10 +24,3 @@ const Gesture = () => {
 };
 
 export default Gesture;
-
-export const Box = styled(animated.div)`
-  background: var(--teal);
-  height: 100px;
-  width: 100px;
-  margin: 0 auto;
-`;
