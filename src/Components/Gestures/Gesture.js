@@ -24,7 +24,7 @@ const Gesture = () => {
 
 export default Gesture;
 
-const Box = styled(animated.div)`
+export const Box = styled(animated.div)`
   background: var(--teal);
   height: 100px;
   width: 100px;

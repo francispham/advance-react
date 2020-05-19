@@ -1,8 +1,9 @@
 import React from 'react'
 
-import Gestures from '../components/Gestures/index';
+import Boxes from '../components/Boxes';
 import Accordion from '../components/Accordion';
 import Waypoints from '../components/Waypoints';
+import Gestures from '../components/Gestures/index';
 import SpringHeader from '../components/SpringHeader';
 
 import { Button } from '../components/Elements';
@@ -28,6 +29,7 @@ const ReactSpring = () => {
           </div>
         )}
       </Toggle>
+      <Boxes />
       <Gestures />
     </div>
   );
