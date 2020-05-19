@@ -9,6 +9,7 @@ export const Box = styled(animated.div)`
 `;
 
 export const FlexBoxes = styled.div`
+  margin-top: 2rem;
   display: flex;
   justify-content: space-around;
 
@@ -23,4 +24,19 @@ export const FlexBoxes = styled.div`
 export const GesturesBox = styled.div`
   display: grid;
   min-height: 100vh;
+`;
+
+export const ChainBoxes = styled(animated.div)`
+  display: grid;
+  padding: 1rem;
+  grid-gap: 20px;
+  background: var(--purp);
+  box-shadow: 0px 10px 10px -5px rgba(0, 0, 0, 0.05);
+  grid-template-columns: repeat(4, minmax(100px, 1fr));
+  div {
+    background: var(--black);
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
 `;

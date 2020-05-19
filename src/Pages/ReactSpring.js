@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Chain from '../components/Chain';
 import Boxes from '../components/Boxes';
 import Accordion from '../components/Accordion';
 import Waypoints from '../components/Waypoints';
@@ -29,6 +30,7 @@ const ReactSpring = () => {
           </div>
         )}
       </Toggle>
+      <Chain />
       <Boxes />
       <Gestures />
     </div>
